@@ -1,4 +1,4 @@
-const Transaction = require('../models/Transaction');
+const Transaction = require('../models/transaction');
 
 /**
  * GET /api/transactions
@@ -89,3 +89,4 @@ exports.getSummary = async (req, res) => {
     return res.status(500).json({ message: 'Server error' });
   }
 };
+
