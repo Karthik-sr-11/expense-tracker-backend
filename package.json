@@ -2,7 +2,7 @@
   "name": "expense-tracker-backend",
   "version": "1.0.0",
   "description": "Backend for Expense Tracker (Express + MongoDB)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -21,3 +21,4 @@
     "nodemon": "^2.0.22"
   }
 }
+
