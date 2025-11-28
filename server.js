@@ -4,7 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/authroutes');
-const transactionRoutes = require('./routes/transactionRoutes');
+const transactionRoutes = require('./routes/transactionroutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,4 +26,5 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
+
 
