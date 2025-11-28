@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/authMiddleware');
+const auth = require('../middleware/authmiddleware');
 const {
   getTransactions,
   addTransaction,
   deleteTransaction,
   getSummary
-} = require('../controllers/transactionController');
+} = require('../controllers/transactioncontroller');
 
 // All routes protected by auth middleware
 router.get('/', auth, getTransactions);
@@ -15,3 +15,4 @@ router.delete('/:id', auth, deleteTransaction);
 router.get('/summary', auth, getSummary);
 
 module.exports = router;
+
