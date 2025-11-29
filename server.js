@@ -14,7 +14,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: "https://sprightly-bunny-0a3941.netlify.app",
+  origin: "https://sprightly-bunny-0a3941.netlify.app/",
   credentials: true
 }));
 app.use(express.json());
@@ -29,6 +29,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
+
 
 
 
