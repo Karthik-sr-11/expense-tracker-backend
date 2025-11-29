@@ -9,27 +9,32 @@ const transactionRoutes = require('./routes/transactionroutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect DB
+// Connect to database
 connectDB();
 
-// Middleware
-app.use(cors({
-    origin: "https://sprightly-bunny-0a3941.netlify.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
+// CORS – allow ALL (important for Netlify + Render)
+app.use(cors());
 
+// Body parser
 app.use(express.json());
 
-// Routes - prefix /api to match frontend
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 
 // Healthcheck
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+app.get('/api', (req, res) => {
+    res.json({ message: "API is running 🚀" });
+});
 
+// Root message (optional)
+app.get('/', (req, res) => {
+    res.send("Expense Tracker API is running...");
+});
+
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+    console.log(`Server started on port ${PORT}`);
 });
 
 
