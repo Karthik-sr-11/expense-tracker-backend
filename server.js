@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // CORS – allow ALL (important for Netlify + Render)
-const cors = require("cors");
 
 app.use(cors({
     origin: "*",
@@ -43,6 +42,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
+
 
 
 
